@@ -6,9 +6,7 @@ function mostrar()
 {
 	//document.getElementById('elNombre').value="Hola";
 	/*Permite mostrar un dato cuando el "=" esta despues*/
-	var nombre;
-	nombre=prompt("Ingrese su nombre");
-	alert("Su nombre es: "+ nombre); 
-	nombre=document.getElementById('elNombre').value;
-}
-
+	var nombre; 
+	nombre= prompt("Ingrese su nombre");
+	document.getElementById('elNombre').value= nombre;
+}	 
