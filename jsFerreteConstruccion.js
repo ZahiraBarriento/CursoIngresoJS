@@ -8,38 +8,51 @@ function Rectangulo ()
 {
 	var Largo;
 	var Ancho;
-	var Radio;
-	var resultado;
+	var Resultado;
 
 	Largo=document.getElementById('Largo').value;
 	Ancho=document.getElementById('Ancho').value;
-	Radio=document.getElementById('Radio').value;
 
 	Largo=parseInt(Largo);
 	Ancho=parseInt(Ancho);
-	Radio=parseInt(Radio);
 
-	resultado=(Largo+Ancho+Radio)*3;
+	Resultado=((Largo+Ancho)*2)*3;
 
-	alert(resultado);
-
+	alert("La cantidad de alambre a comprar es: "+Resultado);
 }
+
 function Circulo () 
 {
+	var Alambre;
 	var Radio;
-	var Diametro;
-	var resultado;
+	var Resultado;
 
 	Radio=document.getElementById('Radio').value;
-	Radio=parseInt(Radio);
 
-	Diametro=Radio*2;
+	Alambre=(2*3.14*Radio);
+	Resultado=Alambre*3
 
-	resultado=Diametro*3;
-	alert(resultado);
-
+	alert("La cantidadde alambre a comprar es: "+Resultado);
 }
+/*Para hacer un contrapiso de 1m x 1m se necesitan 
+2 bolsas de cemento y 3 de cal, debemos mostrar cuantas 
+bolsas se necesitan de cada uno para las medidas del 
+terreno rectangular.*/
 function Materiales () 
 {
-	
+	var Largo;
+	var Ancho;
+	var Cemento;
+	var Cal;
+
+	Largo=document.getElementById('Largo').value;
+	Ancho=document.getElementById('Ancho').value;
+
+	Largo=parseInt(Largo);
+	Ancho=parseInt(Ancho);
+
+	Cemento=(Largo*Ancho)*2;
+	Cal=(Largo*Ancho)*3;
+
+	alert("La cantidad de bolsas de cemento que necesita son "+Cemento+" y de cal son "+Cal+" bolsas");
 }
