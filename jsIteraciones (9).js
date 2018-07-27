@@ -3,9 +3,9 @@ function mostrar()
 
 	var contador=0;
 	// declarar variables
-	var numero;
-	var maximo;
-	var minimo;
+	var numero=0;
+	var elMaximo=0;
+	var elMinimo=0;
 	var respuesta='si';
 
 	while(respuesta!='no')
@@ -13,23 +13,31 @@ function mostrar()
 			numero=prompt("Ingrese un numero:");
 			numero=parseInt(numero);
 
-			if (numero<maximo) 
+			if (numero<elMinimo) 
 			{
-				numero=minimo;
+				elMinimo=numero;
 			}
 			
 			else
 			{
-				if (numero>minimo) 
+				if (numero>elMaximo) 
 				{
-					numero=maximo
+					elMaximo=numero;
 				}
 			}
-			respuesta=prompt("¿Desea ingresar otro numero?")
+			
+			respuesta=prompt("¿Desea ingresar otro numero?");
 			contador++;
+
+			if (contador==1) 
+			{
+				elMaximo=numero;
+				elMinimo=numero;
+			}
 		}
 
-	document.getElementById('maximo').value=maximo;
-	document.getElementById('minimo').value=minimo;
+	document.getElementById('maximo').value=elMaximo;
+	document.getElementById('minimo').value=elMinimo;
 
-}//FIN DE LA FUNCIÓN
+}
+//FIN DE LA FUNCIÓN
