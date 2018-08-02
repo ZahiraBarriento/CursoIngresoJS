@@ -3,35 +3,32 @@ function mostrar()
 	var numeroUno;
 	var numeroDos;
 	var resultado;
-
-	numeroUno=prompt("Ingrese el primer numero");
-	numeroDos=prompt("Ingrese el segundo numero");
-
+ 	
+ 	numeroUno = prompt("Ingrese su primer numero");
+	numeroDos = prompt("Ingrese su segundo numero");
 	numeroUno=parseInt(numeroUno);
 	numeroDos=parseInt(numeroDos);
-	
-	if (numeroUno==numeroDos) 
-	{
-		alert("Su primer numero es: "+numeroUno+" y el segundo es: "+numeroDos);
-	}
-
-	if (numeroUno>numeroDos) 
-	{
-		resultado=numeroUno/numeroDos;
-		alert(resultado);
+ 	
+ 	if(numeroUno==numeroDos)
+ 	{
+		alert("Su primer numero es "+numeroUno+" y su segundo numero es "+numeroDos);
 	}
 	
 	else 
-	{
-
-		if (numeroUno<numeroDos) 
+	{	
+		if (numeroUno>numeroDos)
 		{
-		resultado=numeroUno+numeroDos;
-		if (resultado<50) 
+			resultado = numeroUno-numeroDos;
+			alert(resultado);
+		} 
+		else 
 		{
-			alert("La suma es: "+resultado+" y es menor a 50");
-		}
-		
-		}
-	}
+			resultado= numeroUno+numeroDos;
+			
+			if (resultado>10) 
+			{
+				alert("La suma es " + resultado + " y supera al 10.");
+			}
+		} 
+	}  
 }
