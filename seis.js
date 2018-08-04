@@ -1,48 +1,47 @@
-function mostrar()
+/*Realizar el algoritmo que pida el peso en kilos 
+(validar que sea mayor a 0,”cero”) de cada uno de 
+os 50 contenedores (pedir 50 veces) de un depositor 
+prompt, e informar cual fue el más pesado y cuál
+fue el menos pesado.*/
+function Mostrar()
 {
-	var laHora = document.getElementById('laHora').value;
-	
-	switch (laHora)
+	//parseInt numeros enteros
+	//parseFloat numeros con coma
+	//en la condicion debemos poner lo que no queremos que se cumpla
+	//flag = bandera
+	//en el ultimo flag vale "1"
+
+	var peso;
+	var contador;
+	var maximo;
+	var minimo;
+	var flag;
+
+	contador=0;
+	flag=0;
+
+	while(contador<5)
 	{
-		case "6":
-		case "7":
-		case "8":
-		case "9":
-		case "10":
-		case "11":
-			alert("Es de mañana");
-			break;
+		contador++;
+		peso=prompt("Ingrese el peso en kg.:");
+		peso=parseFloat(peso);
+		while(isNaN(peso)|| peso<=0)
+		{
+			peso=prompt("Peso invalido. Ingrese el peso en kg.:");
+			peso=parseFloat(peso);
+		}
 
-		case "12":
-		case "13":
-		case "14":
-		case "15":
-		case "16":
-		case "17":
-		case "18":
-		case "19":
-			alert("Es de tarde");
-			break;
+		if (flag==0 || peso>maximo) 
+		{
+			maximo=peso;
+		}
 
-		case "0":
-		case "1":
-		case "2":
-		case "3":
-		case "4":
-		case "5":
-		case "20":
-		case "21":
-		case "22":
-		case "23":
-			alert("Es de noche a dormir")
-			break;
+		if (flag==0 || peso<minimo) 
+		{
+			minimo=peso;
+			flag=1;
+		}
+	}
 
-		case "24":
-			alert("Es de noche");
-			break;
-
-		default:
-			alert("La hora no es válida");
-			break;
-	}		
+	document.write("El mas pesado es: "+maximo+"kg y el menos pesado es :"+minimo+"kg");
 }
